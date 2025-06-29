@@ -75,7 +75,19 @@
       <p><strong>Coletivo Voz da Base</strong></p>
       <p><em>Assinam em apoio,</em></p>
       <br>
-      <strong>Total de assinaturas</strong> (29/06/2025 -15h30min): <b>27</b>
+      <p><strong>Total de assinaturas: <span id="contador" style="font-size: 1.5em;">Carregando...</span></strong></p>
+
+<script>
+  fetch("https://script.google.com/macros/s/AKfycbz94R1vofUQqYHfvNjIwg_lpDOii9uwfBGWgxa82Reblvquw16F8ZmaK_4dlTAJHgCP/exec")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("contador").innerText = data;
+    })
+    .catch(error => {
+      console.error("Erro ao buscar contador:", error);
+      document.getElementById("contador").innerText = "Erro";
+    });
+</script>
     </div>
    
 </div>
